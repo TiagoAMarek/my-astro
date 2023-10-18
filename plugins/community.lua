@@ -7,9 +7,11 @@ return {
   { import = "astrocommunity.bars-and-lines.heirline-vscode-winbar" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.github-nvim-theme" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.treesj" },
-  { import = "astrocommunity.motion.hop-nvim" },
+  { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.scrolling.satellite-nvim" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }

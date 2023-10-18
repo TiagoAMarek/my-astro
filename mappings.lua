@@ -13,13 +13,15 @@ return {
     ["<leader>b\\"] = false,
     ["<leader>b|"] = false,
 
-    ["<C-,>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
-    ["<C-.>"] = {
+    ["<M-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
+    ["<M-o>"] = { function() require("telescope.builtin").oldfiles() end, desc = "Find history" },
+    ["<M-;>"] = {
       function() require("telescope.builtin").find_files { hidden = true, no_ignore = true } end,
       desc = "Find all files",
     },
-    ["<C-9>"] = { function() require("telescope.builtin").live_grep() end, desc = "Find words" },
-    ["<C-0>"] = {
+    ["<M-b>"] = { function() require("telescope.builtin").buffers() end, desc = "Find buffers" },
+    ["<M-w>"] = { function() require("telescope.builtin").live_grep() end, desc = "Find words" },
+    ["<M-W>"] = {
       function()
         require("telescope.builtin").live_grep {
           additional_args = function(args) return vim.list_extend(args, { "--hidden", "--no-ignore" }) end,
@@ -27,32 +29,5 @@ return {
       end,
       desc = "Find words in all files",
     }
-    -- navigate buffer tabs with `H` and `L`
-    -- L = {
-    --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-    --   desc = "Next buffer",
-    -- },
-    -- H = {
-    --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-    --   desc = "Previous buffer",
-    -- },
-
-    -- mappings seen under group name "Buffer"
-    -- ["<leader>bD"] = {
-    --   function()
-    --     require("astronvim.utils.status").heirline.buffer_picker(
-    --       function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
-    --     )
-    --   end,
-    --   desc = "Pick to close",
-    -- },
-    -- tables with the `name` key will be registered with which-key if it's installed
-    -- this is useful for naming menus
-    -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-  },
-  t = {
-    -- setting a mapping to false will disable it
-    -- ["<esc>"] = false,
-  },
+  }
 }
